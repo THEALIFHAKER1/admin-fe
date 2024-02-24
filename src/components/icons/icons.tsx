@@ -1,12 +1,15 @@
 import {
+  Bell,
   ChevronDown,
   ChevronLeft,
   ChevronRight,
   ChevronUp,
+  Github,
   HardDrive,
   Home,
   LayoutList,
   LayoutPanelLeft,
+  Loader,
   Mails,
   Moon,
   SunMedium,
@@ -22,6 +25,10 @@ const icons = {
   logo: LayoutPanelLeft,
   sun: SunMedium,
   moon: Moon,
+  bell: Bell,
+
+  spinner: Loader,
+  gitHub: Github,
 
   drive: HardDrive,
   dashboard: Home,

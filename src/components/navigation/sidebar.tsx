@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { SIDENAV_ITEMS } from "@/constant/constant"
@@ -13,7 +13,14 @@ import { Icons } from "../icons/icons"
 import { Button } from "../ui/button"
 
 export default function Sidebar() {
-  const [expanded, setExpanded] = useState(false)
+  const [expanded, setExpanded] = useState(() => {
+    const storedValue = localStorage.getItem("sidebarExpanded")
+    return storedValue ? JSON.parse(storedValue) : false
+  })
+
+  useEffect(() => {
+    localStorage.setItem("sidebarExpanded", JSON.stringify(expanded))
+  }, [expanded])
 
   const toggleExpanded = () => {
     setExpanded(!expanded)
@@ -21,7 +28,7 @@ export default function Sidebar() {
 
   return (
     <div
-      className={`relative flex h-dvh w-52 flex-col ${expanded ? "" : "w-16"}`}
+      className={`relative flex h-dvh  flex-col ${expanded ? "w-52" : "w-16"}`}
     >
       <div className="flex flex-col">
         <div
@@ -79,7 +86,7 @@ const MenuItem = ({
     <div className="">
       <Link
         href={item.path}
-        className={`flex h-[40px] flex-row items-center space-x-2 rounded-lg py-2 ${expanded && "px-[1.15rem]"} text-foreground hover:bg-foreground hover:text-background ${
+        className={`flex h-[40px] flex-row items-center space-x-2 rounded-lg py-2 ${expanded && "px-[1.15rem]"} hover:bg-foreground hover:text-background ${
           item.path === pathname && "bg-foreground font-bold text-background"
         }
           ${!expanded && "justify-center"}`}

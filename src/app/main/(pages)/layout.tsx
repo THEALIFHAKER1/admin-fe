@@ -13,7 +13,7 @@ export default function layout({ children }: { children: React.ReactNode }) {
             width: 8px;
           }
           ::-webkit-scrollbar-track {
-            background-color: #f1f1f1;
+            background-color: transparent;
           }
           ::-webkit-scrollbar-thumb {
             background-color: #888;

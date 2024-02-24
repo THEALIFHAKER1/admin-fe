@@ -23,11 +23,22 @@ import {
   CommandSeparator,
   CommandShortcut,
 } from "@/components/ui/command"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 import { Input } from "@/components/ui/input"
 
+import { Icons } from "../icons/icons"
 import { ModeToggle } from "../theme/mode-toggle"
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar"
 import { Button } from "../ui/button"
+import Notification from "./notification"
+import UserMenu from "./usermenu"
 
 const Header = () => {
   const scrolled = useScroll(5)
@@ -77,14 +88,15 @@ const Header = () => {
             </Button>
           </div>
           <div className="flex items-center space-x-4">
-            <Avatar>
-              <AvatarImage src="https://github.com/shadcn.png" />
-              <AvatarFallback>CN</AvatarFallback>
-            </Avatar>
-            <ModeToggle />
+            <div className="flex rounded-md border-2 border-foreground">
+              <Notification />
+              <ModeToggle />
+            </div>
+            <UserMenu />
           </div>
         </div>
       </div>
+
       <CommandDialog open={open} onOpenChange={setOpen}>
         <CommandInput placeholder="Type a command or search..." />
         <CommandList>

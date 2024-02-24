@@ -21,7 +21,7 @@ export default function Home() {
         </p>
         <div className="flex gap-2">
           <Link
-            href={"/main"}
+            href={"/main/auth"}
             className={cn(buttonVariants({ size: "default" }))}
           >
             Start
