@@ -35,9 +35,9 @@ export const SIDENAV_ITEMS: SideNavItem[] = [
     ],
   },
   {
-    title: "Tasks",
-    path: "/main/tasks",
-    icon: <Icons.tasks width="15" height="15" />,
+    title: "Task",
+    path: "/main/task",
+    icon: <Icons.task width="15" height="15" />,
   },
   // {
   //   title: "Projects",

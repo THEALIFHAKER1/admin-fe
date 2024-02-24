@@ -1,5 +1,6 @@
 import Header from "@/components/navigation/header"
 import HeaderMobile from "@/components/navigation/header-mobile"
+import MobileBar from "@/components/navigation/mobilebar"
 import Sidebar from "@/components/navigation/sidebar"
 import MarginWidthWrapper from "@/components/wrapper/margin-width-wrapper"
 import PageWrapper from "@/components/wrapper/page-wrapper"
@@ -30,6 +31,7 @@ export default function layout({ children }: { children: React.ReactNode }) {
           <MarginWidthWrapper>
             <Header />
             <PageWrapper>{children}</PageWrapper>
+            <MobileBar />
           </MarginWidthWrapper>
         </main>
       </div>

@@ -28,7 +28,7 @@ export default function Sidebar() {
 
   return (
     <div
-      className={`relative flex h-dvh  flex-col ${expanded ? "w-52" : "w-16"}`}
+      className={`relative hidden h-dvh flex-col  md:flex ${expanded ? "w-52" : "w-16"}`}
     >
       <div className="flex flex-col">
         <div

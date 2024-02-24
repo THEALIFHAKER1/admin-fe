@@ -23,20 +23,10 @@ import {
   CommandSeparator,
   CommandShortcut,
 } from "@/components/ui/command"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import { Input } from "@/components/ui/input"
 
-import { Icons } from "../icons/icons"
 import { ModeToggle } from "../theme/mode-toggle"
-import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar"
 import { Button } from "../ui/button"
+import CurrentPage from "./currentpage"
 import Notification from "./notification"
 import UserMenu from "./usermenu"
 
@@ -68,11 +58,13 @@ const Header = () => {
           }
         )}
       >
-        <div className="flex h-[60px] items-center justify-between space-x-2 px-4">
-          <div className="flex items-center space-x-4">left</div>
-          <div className="flex w-full items-center justify-center ">
+        <div className="flex h-[60px] items-center justify-between space-x-2 pl-2 pr-4 sm:px-4">
+          <div className="hidden items-center space-x-4 sm:flex">
+            <CurrentPage />
+          </div>
+          <div className="flex w-full items-center sm:justify-center">
             <Button
-              className="flex w-1/4 min-w-40 justify-between rounded-md border bg-background px-4 py-2 text-sm text-muted-foreground focus-visible:ring-0"
+              className=" flex h-full w-full justify-between rounded-md border-2 border-foreground bg-background text-sm text-muted-foreground focus-visible:ring-0 sm:w-1/3"
               onClick={() => setOpen(true)}
             >
               <p>

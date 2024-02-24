@@ -74,7 +74,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <head />
       <body
         className={cn(
-          "h-dvh bg-background antialiased selection:bg-foreground selection:text-background",
+          "h-dvh w-dvw overflow-hidden bg-background antialiased selection:bg-foreground selection:text-background",
           inter.className
         )}
       >
