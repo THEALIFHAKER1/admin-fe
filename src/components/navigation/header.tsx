@@ -59,7 +59,7 @@ const Header = () => {
         )}
       >
         <div className="flex h-[60px] items-center justify-between space-x-2 pl-2 pr-4 sm:px-4">
-          <div className="hidden items-center space-x-4 sm:flex">
+          <div className="hidden w-3 items-center space-x-4 sm:flex">
             <CurrentPage />
           </div>
           <div className="flex w-full items-center sm:justify-center">

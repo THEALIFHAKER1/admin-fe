@@ -1,11 +1,11 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import { cookies } from "next/headers"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { SIDENAV_ITEMS } from "@/constant/constant"
 import { SideNavItem } from "@/types"
-import { Icon } from "@iconify/react"
 
 import { siteConfig } from "@/config/site"
 
