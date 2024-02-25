@@ -77,11 +77,6 @@ const MenuItem = ({
   expanded: boolean
 }) => {
   const pathname = usePathname()
-  const [subMenuOpen, setSubMenuOpen] = useState(false)
-  const toggleSubMenu = () => {
-    setSubMenuOpen(!subMenuOpen)
-  }
-
   return (
     <div className="">
       <Link

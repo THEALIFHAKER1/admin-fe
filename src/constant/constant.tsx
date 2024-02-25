@@ -1,7 +1,19 @@
-import { SideNavItem } from "@/types"
-import { Icon } from "@iconify/react"
+import exp from "constants"
+import { SideNavItem, Tab } from "@/types"
 
 import { Icons } from "@/components/icons/icons"
+import AllDrive from "@/app/main/(pages)/drive/components/alldrive/alldrive"
+import MySpaces from "@/app/main/(pages)/drive/components/myspaces/myspaces"
+import SharedSpaces from "@/app/main/(pages)/drive/components/sharedspaces/sharespaces"
+import Starred from "@/app/main/(pages)/drive/components/starred/starred"
+import TrashDrive from "@/app/main/(pages)/drive/components/trash/trash"
+import AllMail from "@/app/main/(pages)/email/components/all/allmail"
+import Draft from "@/app/main/(pages)/email/components/draft/draft"
+import Important from "@/app/main/(pages)/email/components/important/important"
+import Inbox from "@/app/main/(pages)/email/components/inbox/inbox"
+import Sent from "@/app/main/(pages)/email/components/sent/sent"
+import Spam from "@/app/main/(pages)/email/components/spam/spam"
+import TrashEmail from "@/app/main/(pages)/email/components/trash/trash"
 
 export const SIDENAV_ITEMS: SideNavItem[] = [
   {
@@ -39,35 +51,82 @@ export const SIDENAV_ITEMS: SideNavItem[] = [
     path: "/main/task",
     icon: <Icons.task width="15" height="15" />,
   },
-  // {
-  //   title: "Projects",
-  //   path: "/projects",
-  //   icon: <Icon icon="lucide:folder" width="15" height="15" />,
-  //   submenu: true,
-  //   subMenuItems: [
-  //     { title: "All", path: "/projects" },
-  //     { title: "Web Design", path: "/projects/web-design" },
-  //     { title: "Graphic Design", path: "/projects/graphic-design" },
-  //   ],
-  // },
-  // {
-  //   title: "Messages",
-  //   path: "/messages",
-  //   icon: <Icon icon="lucide:mail" width="15" height="15" />,
-  // },
-  // {
-  //   title: "Settings",
-  //   path: "/settings",
-  //   icon: <Icon icon="lucide:settings" width="15" height="15" />,
-  //   submenu: true,
-  //   subMenuItems: [
-  //     { title: "Account", path: "/settings/account" },
-  //     { title: "Privacy", path: "/settings/privacy" },
-  //   ],
-  // },
-  // {
-  //   title: "Help",
-  //   path: "/help",
-  //   icon: <Icon icon="lucide:help-circle" width="15" height="15" />,
-  // },
+]
+
+export const EMAIL_TABS: Tab[] = [
+  {
+    value: "all",
+    label: "All Mails",
+    component: <AllMail />,
+    icon: <Icons.mail width="15" height="15" />,
+  },
+  {
+    value: "inbox",
+    label: "Inbox",
+    component: <Inbox />,
+    icon: <Icons.inbox width="15" height="15" />,
+  },
+  {
+    value: "important",
+    label: "Important",
+    component: <Important />,
+    icon: <Icons.important width="15" height="15" />,
+  },
+  {
+    value: "sent",
+    label: "Sent",
+    component: <Sent />,
+    icon: <Icons.sent width="15" height="15" />,
+  },
+  {
+    value: "draft",
+    label: "Drafts",
+    component: <Draft />,
+    icon: <Icons.draft width="15" height="15" />,
+  },
+  {
+    value: "trash",
+    label: "Trash",
+    component: <TrashEmail />,
+    icon: <Icons.trash width="15" height="15" />,
+  },
+  {
+    value: "spam",
+    label: "Spam",
+    component: <Spam />,
+    icon: <Icons.spam width="15" height="15" />,
+  },
+]
+
+export const DRIVE_TABS: Tab[] = [
+  {
+    value: "all",
+    label: "All",
+    component: <AllDrive />,
+    icon: <Icons.drive width="15" height="15" />,
+  },
+  {
+    value: "mySpaces",
+    label: "My Spaces",
+    component: <MySpaces />,
+    icon: <Icons.personal width="15" height="15" />,
+  },
+  {
+    value: "sharedSpaces",
+    label: "Shared Spaces",
+    component: <SharedSpaces />,
+    icon: <Icons.share width="15" height="15" />,
+  },
+  {
+    value: "starred",
+    label: "Starred",
+    component: <Starred />,
+    icon: <Icons.star width="15" height="15" />,
+  },
+  {
+    value: "trash",
+    label: "Trash",
+    component: <TrashDrive />,
+    icon: <Icons.trash width="15" height="15" />,
+  },
 ]

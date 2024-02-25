@@ -20,3 +20,10 @@ export type SideNavItem = {
   submenu?: boolean
   subMenuItems?: SideNavItem[]
 }
+
+export type Tab = {
+  value: string
+  label: string
+  icon?: JSX.Element
+  component: JSX.Element
+}
