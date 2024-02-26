@@ -1,10 +1,9 @@
 "use client"
 
-import { ChangeEvent, useState } from "react"
+import { useState } from "react"
 import { EMAIL_TABS } from "@/constant/constant"
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import CurrentPage from "@/components/navigation/currentpage"
+import { Button } from "@/components/ui/button"
 
 export default function EmailPage() {
   const [activeTab, setActiveTab] = useState("all")
@@ -14,33 +13,26 @@ export default function EmailPage() {
   }
 
   return (
-    <div>
-      <div
-        onChange={(event: ChangeEvent<HTMLDivElement>) =>
-          handleTabChange((event.target as HTMLInputElement).value)
-        }
-      >
-        <Tabs defaultValue={activeTab}>
-          <div className="flex items-center justify-between text-center align-middle">
-            <TabsList>
-              {EMAIL_TABS.map((tab) => (
-                <TabsTrigger key={tab.value} value={tab.value}>
-                  <p className="hidden md:block">{tab.label}</p>
-                  <p className="md:hidden">{tab.icon}</p>
-                </TabsTrigger>
-              ))}
-            </TabsList>
-            <div className="w-full p-1  sm:hidden">
-              <CurrentPage />
-            </div>
-          </div>
-          {EMAIL_TABS.map((tab) => (
-            <TabsContent key={tab.value} value={tab.value}>
-              {tab.component}
-            </TabsContent>
-          ))}
-        </Tabs>
+    <>
+      <div className=" w-fit rounded-md bg-muted">
+        {EMAIL_TABS.map((tab) => (
+          <Button
+            key={tab.value}
+            variant="ghost"
+            onClick={() => handleTabChange(tab.value)}
+            className={`text-muted-foreground hover:bg-background/60 ${activeTab === tab.value && "bg-background/60 text-foreground"}`}
+          >
+            <p className="hidden md:block">{tab.label}</p>
+            <p className="md:hidden">{tab.icon}</p>
+          </Button>
+        ))}
       </div>
-    </div>
+
+      <>
+        {EMAIL_TABS.map((tab) =>
+          activeTab === tab.value ? tab.component : null
+        )}
+      </>
+    </>
   )
 }

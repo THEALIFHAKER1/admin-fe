@@ -8,6 +8,7 @@ import SharedSpaces from "@/app/main/(pages)/drive/components/sharedspaces/share
 import Starred from "@/app/main/(pages)/drive/components/starred/starred"
 import TrashDrive from "@/app/main/(pages)/drive/components/trash/trash"
 import AllMail from "@/app/main/(pages)/email/components/all/allmail"
+import { accounts, mails } from "@/app/main/(pages)/email/components/all/data"
 import Draft from "@/app/main/(pages)/email/components/draft/draft"
 import Important from "@/app/main/(pages)/email/components/important/important"
 import Inbox from "@/app/main/(pages)/email/components/inbox/inbox"
@@ -57,7 +58,13 @@ export const EMAIL_TABS: Tab[] = [
   {
     value: "all",
     label: "All Mails",
-    component: <AllMail />,
+    component: (
+      <AllMail
+        accounts={accounts}
+        mails={mails}
+        defaultLayout={[265, 440, 655]}
+      />
+    ),
     icon: <Icons.mail width="15" height="15" />,
   },
   {
