@@ -1,20 +1,17 @@
 import { TooltipProvider } from "@radix-ui/react-tooltip"
 import { Search } from "lucide-react"
 
-import { cn } from "@/lib/utils"
 import { Input } from "@/components/ui/input"
 import {
   ResizableHandle,
   ResizablePanel,
   ResizablePanelGroup,
 } from "@/components/ui/resizable"
-import { Separator } from "@/components/ui/separator"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
-import { MailDisplay } from "./components/mail-display"
-import { MailList } from "./components/mail-list"
-import { Mail } from "./data"
-import { useMail } from "./use-mail"
+import { MailDisplay } from "../../_components/mail-display"
+import { MailList } from "../../_components/mail-list"
+import { Mail } from "../../_data/data"
+import { useMail } from "../../_data/use-mail"
 
 interface MailProps {
   accounts: {
@@ -24,8 +21,6 @@ interface MailProps {
   }[]
   mails: Mail[]
   defaultLayout?: number[] | undefined
-  // defaultCollapsed?: boolean
-  // navCollapsedSize: number
 }
 
 export default function AllMail({ mails, defaultLayout }: MailProps) {
@@ -34,11 +29,6 @@ export default function AllMail({ mails, defaultLayout }: MailProps) {
     <TooltipProvider delayDuration={0}>
       <ResizablePanelGroup
         direction="horizontal"
-        onLayout={(sizes: number[]) => {
-          document.cookie = `react-resizable-panels:layout=${JSON.stringify(
-            sizes
-          )}`
-        }}
         className="h-full items-stretch overflow-auto "
       >
         <ResizablePanel

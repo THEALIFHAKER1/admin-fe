@@ -7,14 +7,14 @@ import MySpaces from "@/app/main/(pages)/drive/components/myspaces/myspaces"
 import SharedSpaces from "@/app/main/(pages)/drive/components/sharedspaces/sharespaces"
 import Starred from "@/app/main/(pages)/drive/components/starred/starred"
 import TrashDrive from "@/app/main/(pages)/drive/components/trash/trash"
-import AllMail from "@/app/main/(pages)/email/components/all/allmail"
-import { accounts, mails } from "@/app/main/(pages)/email/components/all/data"
-import Draft from "@/app/main/(pages)/email/components/draft/draft"
-import Important from "@/app/main/(pages)/email/components/important/important"
-import Inbox from "@/app/main/(pages)/email/components/inbox/inbox"
-import Sent from "@/app/main/(pages)/email/components/sent/sent"
-import Spam from "@/app/main/(pages)/email/components/spam/spam"
-import TrashEmail from "@/app/main/(pages)/email/components/trash/trash"
+import { accounts, mails } from "@/app/main/(pages)/email/_data/data"
+import AllMail from "@/app/main/(pages)/email/_pages/all/allmail"
+import Draft from "@/app/main/(pages)/email/_pages/draft/draft"
+import Important from "@/app/main/(pages)/email/_pages/important/important"
+import Inbox from "@/app/main/(pages)/email/_pages/inbox/inbox"
+import Sent from "@/app/main/(pages)/email/_pages/sent/sent"
+import Spam from "@/app/main/(pages)/email/_pages/spam/spam"
+import TrashEmail from "@/app/main/(pages)/email/_pages/trash/trash"
 
 export const SIDENAV_ITEMS: SideNavItem[] = [
   {
@@ -57,12 +57,13 @@ export const SIDENAV_ITEMS: SideNavItem[] = [
 export const EMAIL_TABS: Tab[] = [
   {
     value: "all",
-    label: "All Mails",
+    label: "All",
     component: (
       <AllMail
+        key={"all"}
         accounts={accounts}
         mails={mails}
-        defaultLayout={[265, 440, 655]}
+        defaultLayout={[30, 70]}
       />
     ),
     icon: <Icons.mail width="15" height="15" />,
@@ -70,37 +71,37 @@ export const EMAIL_TABS: Tab[] = [
   {
     value: "inbox",
     label: "Inbox",
-    component: <Inbox />,
+    component: <Inbox key={"inbox"} />,
     icon: <Icons.inbox width="15" height="15" />,
   },
   {
     value: "important",
     label: "Important",
-    component: <Important />,
+    component: <Important key={"important"} />,
     icon: <Icons.important width="15" height="15" />,
   },
   {
     value: "sent",
     label: "Sent",
-    component: <Sent />,
+    component: <Sent key={"sent"} />,
     icon: <Icons.sent width="15" height="15" />,
   },
   {
     value: "draft",
     label: "Drafts",
-    component: <Draft />,
+    component: <Draft key={"draft"} />,
     icon: <Icons.draft width="15" height="15" />,
   },
   {
     value: "trash",
     label: "Trash",
-    component: <TrashEmail />,
+    component: <TrashEmail key={"trash"} />,
     icon: <Icons.trash width="15" height="15" />,
   },
   {
     value: "spam",
     label: "Spam",
-    component: <Spam />,
+    component: <Spam key={"spam"} />,
     icon: <Icons.spam width="15" height="15" />,
   },
 ]

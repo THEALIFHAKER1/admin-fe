@@ -6,8 +6,8 @@ import { Badge } from "@/components/ui/badge"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Separator } from "@/components/ui/separator"
 
-import { Mail } from "../data"
-import { useMail } from "../use-mail"
+import { Mail } from "../_data/data"
+import { useMail } from "../_data/use-mail"
 
 interface MailListProps {
   items: Mail[]

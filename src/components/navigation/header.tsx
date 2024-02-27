@@ -64,7 +64,7 @@ const Header = () => {
           </div>
           <div className="flex w-full items-center sm:justify-center">
             <Button
-              className=" flex h-full w-full justify-between rounded-md border-2 border-foreground bg-background text-sm text-muted-foreground focus-visible:ring-0 sm:w-1/3"
+              className=" flex h-full w-full justify-between rounded-md border border-foreground bg-background text-sm text-muted-foreground focus-visible:ring-0 sm:w-1/3"
               onClick={() => setOpen(true)}
             >
               <p>
@@ -80,7 +80,7 @@ const Header = () => {
             </Button>
           </div>
           <div className="flex items-center space-x-4">
-            <div className="flex rounded-md border-2 border-foreground">
+            <div className="flex rounded-md border border-foreground">
               <Notification />
               <ModeToggle />
             </div>

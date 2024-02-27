@@ -7,7 +7,7 @@ export default function layout({ children }: { children: React.ReactNode }) {
       <div className="flex">
         <main className="flex-1">
           <MarginWidthWrapper>
-            <div className="m-4 flex h-dvh flex-grow flex-col space-y-2 overflow-auto rounded-lg border-2 border-foreground p-4">
+            <div className="m-4 flex h-dvh flex-grow flex-col space-y-2 overflow-auto rounded-lg border border-foreground p-4">
               {children}
             </div>
           </MarginWidthWrapper>

@@ -818,7 +818,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@radix-ui/react-dialog@npm:^1.0.5":
+"@radix-ui/react-dialog@npm:^1.0.4, @radix-ui/react-dialog@npm:^1.0.5":
   version: 1.0.5
   resolution: "@radix-ui/react-dialog@npm:1.0.5"
   dependencies:
@@ -1924,6 +1924,7 @@ __metadata:
     tailwindcss: "npm:^3.4.1"
     tailwindcss-animate: "npm:^1.0.7"
     typescript: "npm:^5.3.3"
+    vaul: "npm:^0.9.0"
     zod: "npm:^3.22.4"
   languageName: unknown
   linkType: soft
@@ -5859,6 +5860,18 @@ __metadata:
   version: 1.0.2
   resolution: "util-deprecate@npm:1.0.2"
   checksum: 10c0/41a5bdd214df2f6c3ecf8622745e4a366c4adced864bc3c833739791aeeeb1838119af7daed4ba36428114b5c67dcda034a79c882e97e43c03e66a4dd7389942
+  languageName: node
+  linkType: hard
+
+"vaul@npm:^0.9.0":
+  version: 0.9.0
+  resolution: "vaul@npm:0.9.0"
+  dependencies:
+    "@radix-ui/react-dialog": "npm:^1.0.4"
+  peerDependencies:
+    react: ^16.8 || ^17.0 || ^18.0
+    react-dom: ^16.8 || ^17.0 || ^18.0
+  checksum: 10c0/3b4290f7bbc984c7ab3784e6b5a16f6cd2f380798d8c0d1a01818f215f473ecefc6a3f5ccf6724107282a9ceb1a7f8fce8f841ae3eb70cc63b23776bd42fd9e7
   languageName: node
   linkType: hard
 

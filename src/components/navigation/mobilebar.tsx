@@ -9,7 +9,7 @@ export default function MobileBar() {
   const pathname = usePathname()
 
   return (
-    <div className=" mx-4 mb-4 flex items-center justify-center rounded-xl border-2 border-foreground bg-background p-5 md:hidden ">
+    <div className=" mx-4 mb-4 flex items-center justify-center rounded-xl border border-foreground bg-background p-5 md:hidden ">
       <div className="flex space-x-6">
         {SIDENAV_ITEMS.map((item, idx) => {
           return (
