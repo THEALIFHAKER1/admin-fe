@@ -13,19 +13,22 @@ import { Icons } from "../icons/icons"
 import { Button } from "../ui/button"
 
 export default function Sidebar() {
-  const [expanded, setExpanded] = useState(() => {
-    const storedValue = localStorage.getItem("sidebarExpanded")
-    return storedValue ? JSON.parse(storedValue) : false
-  })
+  const [expanded, setExpanded] = useState(false)
 
   useEffect(() => {
-    localStorage.setItem("sidebarExpanded", JSON.stringify(expanded))
-  }, [expanded])
+    if (typeof window !== "undefined") {
+      const storeValue = localStorage.getItem("sidebarExpanded")
+      setExpanded(storeValue === "true")
+    }
+  }, [])
 
   const toggleExpanded = () => {
-    setExpanded(!expanded)
+    const newExpandedValue = !expanded
+    setExpanded(newExpandedValue)
+    if (typeof window !== "undefined") {
+      localStorage.setItem("sidebarExpanded", JSON.stringify(newExpandedValue))
+    }
   }
-
   return (
     <div
       className={`relative hidden h-dvh flex-col  md:flex ${expanded ? "w-52" : "w-16"}`}

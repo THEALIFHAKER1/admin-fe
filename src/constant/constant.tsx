@@ -7,7 +7,7 @@ import MySpaces from "@/app/main/(pages)/drive/components/myspaces/myspaces"
 import SharedSpaces from "@/app/main/(pages)/drive/components/sharedspaces/sharespaces"
 import Starred from "@/app/main/(pages)/drive/components/starred/starred"
 import TrashDrive from "@/app/main/(pages)/drive/components/trash/trash"
-import { accounts, mails } from "@/app/main/(pages)/email/_data/data"
+import { mails } from "@/app/main/(pages)/email/_data/data"
 import AllMail from "@/app/main/(pages)/email/_pages/all/allmail"
 import Draft from "@/app/main/(pages)/email/_pages/draft/draft"
 import Important from "@/app/main/(pages)/email/_pages/important/important"
@@ -58,14 +58,7 @@ export const EMAIL_TABS: Tab[] = [
   {
     value: "all",
     label: "All",
-    component: (
-      <AllMail
-        key={"all"}
-        accounts={accounts}
-        mails={mails}
-        defaultLayout={[30, 70]}
-      />
-    ),
+    component: <AllMail key={"all"} />,
     icon: <Icons.mail width="15" height="15" />,
   },
   {
@@ -80,24 +73,24 @@ export const EMAIL_TABS: Tab[] = [
     component: <Important key={"important"} />,
     icon: <Icons.important width="15" height="15" />,
   },
-  {
-    value: "sent",
-    label: "Sent",
-    component: <Sent key={"sent"} />,
-    icon: <Icons.sent width="15" height="15" />,
-  },
-  {
-    value: "draft",
-    label: "Drafts",
-    component: <Draft key={"draft"} />,
-    icon: <Icons.draft width="15" height="15" />,
-  },
-  {
-    value: "trash",
-    label: "Trash",
-    component: <TrashEmail key={"trash"} />,
-    icon: <Icons.trash width="15" height="15" />,
-  },
+  // {
+  //   value: "sent",
+  //   label: "Sent",
+  //   component: <Sent key={"sent"} />,
+  //   icon: <Icons.sent width="15" height="15" />,
+  // },
+  // {
+  //   value: "draft",
+  //   label: "Drafts",
+  //   component: <Draft key={"draft"} />,
+  //   icon: <Icons.draft width="15" height="15" />,
+  // },
+  // {
+  //   value: "trash",
+  //   label: "Trash",
+  //   component: <TrashEmail key={"trash"} />,
+  //   icon: <Icons.trash width="15" height="15" />,
+  // },
   {
     value: "spam",
     label: "Spam",

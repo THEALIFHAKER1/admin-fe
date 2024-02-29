@@ -1,3 +1,4 @@
+import { useState } from "react"
 import { TooltipProvider } from "@radix-ui/react-tooltip"
 import { Search } from "lucide-react"
 
@@ -8,23 +9,32 @@ import {
   ResizablePanelGroup,
 } from "@/components/ui/resizable"
 
-import { MailDisplay } from "./mail-display"
-import { MailList } from "./mail-list"
 import { Mail } from "../_data/data"
 import { useMail } from "../_data/use-mail"
+import { MailDisplay } from "./mail-display"
+import { MailList } from "./mail-list"
 
 interface MailProps {
-  accounts: {
-    label: string
-    email: string
-    icon: React.ReactNode
-  }[]
   mails: Mail[]
   defaultLayout?: number[] | undefined
 }
 
-export default function Mail({ mails, defaultLayout }: MailProps) {
+export default function MailComponent({ mails, defaultLayout }: MailProps) {
   const [mail] = useMail()
+  const [filteredMails, setFilteredMails] = useState(mails)
+  const SearchMail = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value
+    const filteredMails = mails.filter((mail) => {
+      return (
+        mail.subject.toLowerCase().includes(value.toLowerCase()) ||
+        mail.date.toLowerCase().includes(value.toLowerCase()) ||
+        mail.email.toLowerCase().includes(value.toLowerCase()) ||
+        mail.text.toLowerCase().includes(value.toLowerCase()) ||
+        mail.name.toLowerCase().includes(value.toLowerCase())
+      )
+    })
+    setFilteredMails(filteredMails)
+  }
   return (
     <TooltipProvider delayDuration={0}>
       <ResizablePanelGroup
@@ -39,12 +49,16 @@ export default function Mail({ mails, defaultLayout }: MailProps) {
             <form>
               <div className="relative">
                 <Search className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground" />
-                <Input placeholder="Search" className="pl-8" />
+                <Input
+                  placeholder="Search email"
+                  className="pl-8"
+                  onChange={SearchMail}
+                />
               </div>
             </form>
           </div>
           <div className=" h-full overflow-auto">
-            <MailList items={mails} />
+            <MailList items={filteredMails} />
           </div>
         </ResizablePanel>
         <ResizableHandle withHandle />

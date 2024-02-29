@@ -77,7 +77,7 @@ export const mails = [
     text: "Let's plan our vacation for next month. What do you think? I've been thinking of visiting a tropical paradise, and I've put together some destination options.\n\nI believe it's time for us to unwind and recharge. Please take a look at the options and let me know your preferences.\n\nWe can start making arrangements to ensure a smooth and enjoyable trip.\n\nExcited to hear your thoughts! Olivia",
     date: "2022-12-20T18:30:00",
     read: true,
-    labels: ["personal"],
+    labels: ["spam"],
   },
   {
     id: "de305d54-75b4-431b-adb2-eb6b9e546014",
