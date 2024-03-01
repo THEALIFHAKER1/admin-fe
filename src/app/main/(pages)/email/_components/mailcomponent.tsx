@@ -1,3 +1,5 @@
+"use client"
+
 import { useState } from "react"
 import { TooltipProvider } from "@radix-ui/react-tooltip"
 import { Search } from "lucide-react"

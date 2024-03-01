@@ -1,16 +1,14 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { cookies } from "next/headers"
 import Link from "next/link"
-import { usePathname } from "next/navigation"
 import { SIDENAV_ITEMS } from "@/constant/constant"
-import { SideNavItem } from "@/types"
 
 import { siteConfig } from "@/config/site"
 
 import { Icons } from "../icons/icons"
 import { Button } from "../ui/button"
+import MenuItem from "./MenuItem"
 
 export default function Sidebar() {
   const [expanded, setExpanded] = useState(false)
@@ -68,30 +66,6 @@ export default function Sidebar() {
           )}
         </Button>
       </div>
-    </div>
-  )
-}
-
-const MenuItem = ({
-  item,
-  expanded,
-}: {
-  item: SideNavItem
-  expanded: boolean
-}) => {
-  const pathname = usePathname()
-  return (
-    <div className="">
-      <Link
-        href={item.path}
-        className={`flex h-[40px] flex-row items-center space-x-2 rounded-lg py-2 ${expanded && "px-[1.15rem]"} hover:bg-foreground hover:text-background ${
-          item.path === pathname && "bg-foreground font-bold text-background"
-        }
-          ${!expanded && "justify-center"}`}
-      >
-        {item.icon}
-        {expanded && <span className="flex">{item.title}</span>}
-      </Link>
     </div>
   )
 }
