@@ -73,24 +73,24 @@ export const EMAIL_TABS: Tab[] = [
     component: <Important key={"important"} />,
     icon: <Icons.important width="15" height="15" />,
   },
-  // {
-  //   value: "sent",
-  //   label: "Sent",
-  //   component: <Sent key={"sent"} />,
-  //   icon: <Icons.sent width="15" height="15" />,
-  // },
-  // {
-  //   value: "draft",
-  //   label: "Drafts",
-  //   component: <Draft key={"draft"} />,
-  //   icon: <Icons.draft width="15" height="15" />,
-  // },
-  // {
-  //   value: "trash",
-  //   label: "Trash",
-  //   component: <TrashEmail key={"trash"} />,
-  //   icon: <Icons.trash width="15" height="15" />,
-  // },
+  {
+    value: "sent",
+    label: "Sent",
+    component: <Sent key={"sent"} />,
+    icon: <Icons.sent width="15" height="15" />,
+  },
+  {
+    value: "draft",
+    label: "Drafts",
+    component: <Draft key={"draft"} />,
+    icon: <Icons.draft width="15" height="15" />,
+  },
+  {
+    value: "trash",
+    label: "Trash",
+    component: <TrashEmail key={"trash"} />,
+    icon: <Icons.trash width="15" height="15" />,
+  },
   {
     value: "spam",
     label: "Spam",
